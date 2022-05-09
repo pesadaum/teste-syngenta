@@ -16,26 +16,15 @@ class MyTest(TestCase):
 
     def test3(self):
         """
-        O teste consta com 2 erros:
+        O teste consta com 1 erro:
         1. O tipo do cliente é, obrigatóriamente 'Regular' ou 'Reward', e o teste verifica a string 'Rewards'. Esse tipo de erro deve ser filtrado antes de realizarem os testes unitários
-        2. A função pode retornar tanto 'Ridgewood' quanto 'Lakewood' pois os dois ficam com o mesmo preço no teste de caso 3. 
         """
 
-        """
-        Teste com erros:
-        """
-        # result = "Ridgewood"
-        # self.assertEqual(result, get_cheapest_hotel(
-        #     "Reward: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)"))
+        result = "Ridgewood"
+
+        # Teste com erros:
         # self.assertEqual(result, get_cheapest_hotel("Rewards: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)"))
 
-        '''
-        Teste refatorado:
-        '''
-        result_1 = "Ridgewood"
-        result_2 = "Lakewood"
-
-        params = "Reward: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)"
-
-        self.assertTrue((result_1 == get_cheapest_hotel(params))
-                        or (result_2 == get_cheapest_hotel(params)))
+        # Teste refatorado:
+        self.assertEqual(result, get_cheapest_hotel(
+            "Reward: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)"))
